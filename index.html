@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>だんじりと天王寺（てんのうじ）のだんじりの歴史（れきし）</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #27323a;
+      --muted: #5f6f78;
+      --paper: #fffdf8;
+      --line: #e4ded1;
+      --wood: #8b4d24;
+      --red: #c7472f;
+      --leaf: #2f7d68;
+      --sky: #dff3ff;
+      --gold: #f5bd3d;
+      --shadow: 0 18px 50px rgba(39, 50, 58, .12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Hiragino Sans", "Yu Gothic", "YuGothic", "Noto Sans JP", system-ui, sans-serif;
+      line-height: 1.8;
+      background:
+        radial-gradient(circle at top left, rgba(245, 189, 61, .22), transparent 28rem),
+        linear-gradient(180deg, #f7fbff 0%, var(--paper) 42%, #fff8eb 100%);
+    }
+
+    a {
+      color: #0d6a8f;
+      text-underline-offset: .18em;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: -4rem;
+      z-index: 10;
+      padding: .6rem .9rem;
+      border-radius: .5rem;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    header {
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(120deg, rgba(255, 253, 248, .96), rgba(223, 243, 255, .9));
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(18rem, .95fr);
+      gap: clamp(1.5rem, 4vw, 3rem);
+      align-items: center;
+      width: min(1120px, calc(100% - 2rem));
+      min-height: min(720px, 92vh);
+      margin: 0 auto;
+      padding: clamp(2rem, 5vw, 4.5rem) 0 2rem;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      margin: 0 0 1rem;
+      padding: .35rem .7rem;
+      border: 1px solid rgba(199, 71, 47, .25);
+      border-radius: 999px;
+      color: var(--red);
+      background: rgba(255, 255, 255, .8);
+      font-size: .92rem;
+      font-weight: 700;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: .6rem;
+      height: .6rem;
+      border-radius: 50%;
+      background: var(--red);
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 11ch;
+      font-size: clamp(2.25rem, 7vw, 5.2rem);
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 38rem;
+      margin: 1.25rem 0 0;
+      color: #3c4c55;
+      font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+      font-weight: 600;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      margin-top: 1.5rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 2.9rem;
+      padding: .65rem 1rem;
+      border: 2px solid transparent;
+      border-radius: .65rem;
+      background: var(--ink);
+      color: #fff;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .button.secondary {
+      border-color: var(--ink);
+      background: #fff;
+      color: var(--ink);
+    }
+
+    .hero-photo {
+      position: relative;
+      margin: 0;
+      border-radius: .5rem;
+      overflow: hidden;
+      background: #27190f;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-photo img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .hero-photo figcaption {
+      position: absolute;
+      inset: auto 0 0;
+      padding: .75rem .9rem;
+      color: #fff;
+      font-size: .84rem;
+      line-height: 1.5;
+      background: linear-gradient(180deg, transparent, rgba(0, 0, 0, .72));
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      border-block: 1px solid var(--line);
+      background: rgba(255, 253, 248, .92);
+      backdrop-filter: blur(16px);
+    }
+
+    nav ul {
+      display: flex;
+      gap: .5rem;
+      width: min(1120px, calc(100% - 1rem));
+      margin: 0 auto;
+      padding: .55rem 0;
+      overflow-x: auto;
+      list-style: none;
+    }
+
+    nav a {
+      display: block;
+      white-space: nowrap;
+      padding: .45rem .75rem;
+      border-radius: .5rem;
+      color: var(--ink);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    nav a:hover,
+    nav a:focus-visible {
+      background: var(--sky);
+      outline: none;
+    }
+
+    main {
+      width: min(1120px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 2rem 0 4rem;
+    }
+
+    .section {
+      padding: clamp(1.6rem, 4vw, 2.8rem) 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-title {
+      display: flex;
+      gap: .85rem;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .number {
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--red);
+      font-weight: 900;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(1.55rem, 3.2vw, 2.35rem);
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 0 0 .45rem;
+      font-size: 1.12rem;
+      line-height: 1.4;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: .75rem 0 0;
+    }
+
+    ruby {
+      ruby-position: over;
+    }
+
+    rt {
+      color: var(--muted);
+      font-size: .55em;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 18rem;
+      gap: 1.25rem;
+      align-items: start;
+    }
+
+    .body-text {
+      font-size: 1.08rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: .9rem;
+      margin-top: 1.1rem;
+    }
+
+    .card,
+    .side-box,
+    details {
+      border: 1px solid var(--line);
+      border-radius: .5rem;
+      background: rgba(255, 255, 255, .82);
+      box-shadow: 0 8px 22px rgba(39, 50, 58, .06);
+    }
+
+    .card {
+      padding: 1rem;
+    }
+
+    .card .label,
+    .side-box .label {
+      display: inline-block;
+      margin-bottom: .5rem;
+      color: var(--leaf);
+      font-size: .85rem;
+      font-weight: 900;
+    }
+
+    .side-box {
+      padding: 1rem;
+      border-top: .35rem solid var(--gold);
+    }
+
+    .side-box ul,
+    .check-list {
+      margin: .55rem 0 0;
+      padding-left: 1.25rem;
+    }
+
+    .side-box li,
+    .check-list li {
+      margin-top: .35rem;
+    }
+
+    .keyword-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: .85rem;
+      margin-top: 1rem;
+    }
+
+    details {
+      padding: .85rem .95rem;
+    }
+
+    summary {
+      cursor: pointer;
+      color: var(--wood);
+      font-weight: 900;
+    }
+
+    details p {
+      color: var(--muted);
+      font-size: .98rem;
+    }
+
+    .timeline {
+      display: grid;
+      gap: .9rem;
+      margin-top: 1rem;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 8.5rem minmax(0, 1fr);
+      gap: 1rem;
+      padding: 1rem;
+      border-left: .35rem solid var(--red);
+      border-radius: .5rem;
+      background: #fff;
+    }
+
+    .time {
+      color: var(--wood);
+      font-weight: 900;
+    }
+
+    .feature {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .feature article {
+      min-height: 100%;
+      padding: 1rem;
+      border-radius: .5rem;
+      background: linear-gradient(135deg, #fff, #fff5e3);
+      border: 1px solid var(--line);
+    }
+
+    footer {
+      padding: 2rem 1rem;
+      color: var(--muted);
+      text-align: center;
+      background: #f7f1e5;
+    }
+
+    @media (max-width: 860px) {
+      .hero,
+      .content-grid,
+      .feature {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      h1 {
+        max-width: 12ch;
+      }
+
+      .cards,
+      .keyword-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 560px) {
+      main,
+      .hero {
+        width: min(100% - 1rem, 1120px);
+      }
+
+      .cards,
+      .keyword-grid,
+      .timeline-item {
+        grid-template-columns: 1fr;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      nav,
+      .hero-actions,
+      .skip-link {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .card,
+      .side-box,
+      details,
+      .timeline-item,
+      .feature article {
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main"><ruby>本文<rt>ほんぶん</rt></ruby>へすすむ</a>
+
+  <header>
+    <section class="hero" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow"><ruby>小学<rt>しょうがく</rt></ruby>3<ruby>年生<rt>ねんせい</rt></ruby>の<ruby>調<rt>しら</rt></ruby>べ<ruby>学習<rt>がくしゅう</rt></ruby></p>
+        <h1 id="page-title">だんじりと<ruby>天王寺<rt>てんのうじ</rt></ruby>のだんじり</h1>
+        <p class="lead"><ruby>祭<rt>まつ</rt></ruby>りで<ruby>使<rt>つか</rt></ruby>われる<ruby>大<rt>おお</rt></ruby>きな<ruby>山車<rt>だし</rt></ruby>「だんじり」について、<ruby>言葉<rt>ことば</rt></ruby>の<ruby>意味<rt>いみ</rt></ruby>、<ruby>歴史<rt>れきし</rt></ruby>、<ruby>天王寺<rt>てんのうじ</rt></ruby>のだんじりの<ruby>特色<rt>とくしょく</rt></ruby>を、やさしい<ruby>言葉<rt>ことば</rt></ruby>で<ruby>学<rt>まな</rt></ruby>べるページです。</p>
+        <div class="hero-actions" aria-label="ページ内リンク">
+          <a class="button" href="#start"><ruby>読<rt>よ</rt></ruby>みはじめる</a>
+          <a class="button secondary" href="#memo">まとめメモへ</a>
+        </div>
+      </div>
+      <figure class="hero-photo">
+        <img src="assets/danjiri-wood-carving.jpg" alt="だんじりの木（き）にほられた細（こま）かい彫刻（ちょうこく）">
+        <figcaption>だんじりには、<ruby>木<rt>き</rt></ruby>に<ruby>細<rt>こま</rt></ruby>かい<ruby>彫刻<rt>ちょうこく</rt></ruby>がほられているものがあります。</figcaption>
+      </figure>
+    </section>
+  </header>
+
+  <nav aria-label="学習メニュー">
+    <ul>
+      <li><a href="#start">だんじりとは</a></li>
+      <li><a href="#history"><ruby>歴史<rt>れきし</rt></ruby></a></li>
+      <li><a href="#tennoji"><ruby>天王寺<rt>てんのうじ</rt></ruby></a></li>
+      <li><a href="#old-tennoji"><ruby>昔<rt>むかし</rt></ruby>の<ruby>町<rt>まち</rt></ruby></a></li>
+      <li><a href="#beginning"><ruby>始<rt>はじ</rt></ruby>まり</a></li>
+      <li><a href="#words">ことば</a></li>
+      <li><a href="#memo">まとめ</a></li>
+    </ul>
+  </nav>
+
+  <main id="main">
+    <section class="section" id="start">
+      <div class="section-title">
+        <span class="number">1</span>
+        <h2>だんじりってなんだろう？</h2>
+      </div>
+      <div class="content-grid">
+        <div class="body-text">
+          <p>「だんじり」は、<ruby>西日本<rt>にしにほん</rt></ruby>でお<ruby>祭<rt>まつ</rt></ruby>りのときによく<ruby>使<rt>つか</rt></ruby>われる<ruby>大<rt>おお</rt></ruby>きな「<ruby>山車<rt>だし</rt></ruby>」のことです。お<ruby>祭<rt>まつ</rt></ruby>りは、<ruby>神様<rt>かみさま</rt></ruby>やご<ruby>先祖<rt>せんぞ</rt></ruby>さまに<ruby>感謝<rt>かんしゃ</rt></ruby>したり、お<ruby>米<rt>こめ</rt></ruby>や<ruby>野菜<rt>やさい</rt></ruby>がたくさんとれるようにお<ruby>願<rt>ねが</rt></ruby>いしたりするために<ruby>行<rt>おこな</rt></ruby>われます。</p>
+          <div class="cards">
+            <article class="card">
+              <span class="label"><ruby>名前<rt>なまえ</rt></ruby></span>
+              <h3><ruby>地車<rt>だんじり</rt></ruby>と<ruby>書<rt>か</rt></ruby>くことが<ruby>多<rt>おお</rt></ruby>い</h3>
+              <p><ruby>地面<rt>じめん</rt></ruby>を<ruby>引<rt>ひ</rt></ruby>いて<ruby>歩<rt>ある</rt></ruby>く<ruby>車<rt>くるま</rt></ruby>なので、「<ruby>地車<rt>だんじり</rt></ruby>」と<ruby>書<rt>か</rt></ruby>いて「だんじり」と<ruby>読<rt>よ</rt></ruby>むことがあります。</p>
+            </article>
+            <article class="card">
+              <span class="label"><ruby>音楽<rt>おんがく</rt></ruby></span>
+              <h3><ruby>鳴<rt>な</rt></ruby>り<ruby>物<rt>もの</rt></ruby>に<ruby>合<rt>あ</rt></ruby>わせる</h3>
+              <p><ruby>大太鼓<rt>おおだいこ</rt></ruby>、<ruby>小太鼓<rt>こだいこ</rt></ruby>、<ruby>鉦<rt>かね</rt></ruby>、<ruby>笛<rt>ふえ</rt></ruby>の<ruby>音<rt>おと</rt></ruby>に<ruby>合<rt>あ</rt></ruby>わせて、みんなで<ruby>力<rt>ちから</rt></ruby>を<ruby>合<rt>あ</rt></ruby>わせて<ruby>動<rt>うご</rt></ruby>かします。</p>
+            </article>
+            <article class="card">
+              <span class="label">かざり</span>
+              <h3><ruby>木<rt>き</rt></ruby>の<ruby>彫刻<rt>ちょうこく</rt></ruby>がある</h3>
+              <p><ruby>日本<rt>にほん</rt></ruby>の<ruby>神話<rt>しんわ</rt></ruby>や<ruby>昔<rt>むかし</rt></ruby>の<ruby>戦<rt>たたか</rt></ruby>いのお<ruby>話<rt>はなし</rt></ruby>などをあらわした、<ruby>細<rt>こま</rt></ruby>かくて<ruby>美<rt>うつく</rt></ruby>しい<ruby>彫刻<rt>ちょうこく</rt></ruby>がほられています。</p>
+            </article>
+          </div>
+        </div>
+        <aside class="side-box">
+          <span class="label"><ruby>見<rt>み</rt></ruby>つけよう</span>
+          <h3><ruby>写真<rt>しゃしん</rt></ruby>を<ruby>見<rt>み</rt></ruby>るポイント</h3>
+          <ul>
+            <li><ruby>木<rt>き</rt></ruby>のもようはどんな<ruby>形<rt>かたち</rt></ruby>かな。</li>
+            <li>どんな<ruby>道具<rt>どうぐ</rt></ruby>で<ruby>作<rt>つく</rt></ruby>ったのかな。</li>
+            <li><ruby>町<rt>まち</rt></ruby>の<ruby>人<rt>ひと</rt></ruby>はなぜ<ruby>大切<rt>たいせつ</rt></ruby>にしているのかな。</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="history">
+      <div class="section-title">
+        <span class="number">2</span>
+        <h2>だんじりの<ruby>歴史<rt>れきし</rt></ruby></h2>
+      </div>
+      <p class="body-text">だんじりのお<ruby>祭<rt>まつ</rt></ruby>りは、<ruby>江戸時代<rt>えどじだい</rt></ruby>から<ruby>関西地方<rt>かんさいちほう</rt></ruby>で<ruby>始<rt>はじ</rt></ruby>まったと<ruby>言<rt>い</rt></ruby>われています。<ruby>一番<rt>いちばん</rt></ruby><ruby>有名<rt>ゆうめい</rt></ruby>な<ruby>大阪<rt>おおさか</rt></ruby>の「<ruby>岸和田<rt>きしわだ</rt></ruby>だんじり<ruby>祭<rt>まつり</rt></ruby>」は、<ruby>今<rt>いま</rt></ruby>から<ruby>約<rt>やく</rt></ruby>300<ruby>年前<rt>ねんまえ</rt></ruby>の1703<ruby>年<rt>ねん</rt></ruby>に<ruby>始<rt>はじ</rt></ruby>まりました。</p>
+      <div class="timeline">
+        <article class="timeline-item">
+          <div class="time"><ruby>江戸時代<rt>えどじだい</rt></ruby></div>
+          <div>
+            <h3><ruby>関西地方<rt>かんさいちほう</rt></ruby>で<ruby>広<rt>ひろ</rt></ruby>がる</h3>
+            <p><ruby>神様<rt>かみさま</rt></ruby>に<ruby>感謝<rt>かんしゃ</rt></ruby>し、<ruby>米<rt>こめ</rt></ruby>や<ruby>麦<rt>むぎ</rt></ruby>、<ruby>豆<rt>まめ</rt></ruby>などがたくさんとれるように<ruby>願<rt>ねが</rt></ruby>う<ruby>祭<rt>まつ</rt></ruby>りとして<ruby>行<rt>おこな</rt></ruby>われてきました。</p>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <div class="time">1703<ruby>年<rt>ねん</rt></ruby></div>
+          <div>
+            <h3><ruby>岸和田<rt>きしわだ</rt></ruby>だんじり<ruby>祭<rt>まつり</rt></ruby>の<ruby>始<rt>はじ</rt></ruby>まり</h3>
+            <p><ruby>当時<rt>とうじ</rt></ruby>のお<ruby>殿様<rt>とのさま</rt></ruby>が、<ruby>五穀豊穣<rt>ごこくほうじょう</rt></ruby>を<ruby>神様<rt>かみさま</rt></ruby>にお<ruby>祈<rt>いの</rt></ruby>りしたことが<ruby>始<rt>はじ</rt></ruby>まりだと<ruby>伝<rt>つた</rt></ruby>えられています。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="tennoji">
+      <div class="section-title">
+        <span class="number">3</span>
+        <h2><ruby>天王寺<rt>てんのうじ</rt></ruby>のだんじりの<ruby>歴史<rt>れきし</rt></ruby></h2>
+      </div>
+      <p class="body-text"><ruby>大阪市<rt>おおさかし</rt></ruby>の<ruby>天王寺区<rt>てんのうじく</rt></ruby>には、「<ruby>河堀稲生神社<rt>かわほりいなりじんじゃ</rt></ruby>」という<ruby>古<rt>ふる</rt></ruby>い<ruby>神社<rt>じんじゃ</rt></ruby>があり、ここでもだんじりのお<ruby>祭<rt>まつ</rt></ruby>りが<ruby>行<rt>おこな</rt></ruby>われています。</p>
+      <div class="feature">
+        <article>
+          <h3><ruby>古<rt>ふる</rt></ruby>い<ruby>神社<rt>じんじゃ</rt></ruby>とつながる<ruby>祭<rt>まつ</rt></ruby>り</h3>
+          <p><ruby>河堀稲生神社<rt>かわほりいなりじんじゃ</rt></ruby>は、<ruby>聖徳太子<rt>しょうとくたいし</rt></ruby>が<ruby>四天王寺<rt>してんのうじ</rt></ruby>を<ruby>建<rt>た</rt></ruby>てたときに<ruby>一緒<rt>いっしょ</rt></ruby>に<ruby>作<rt>つく</rt></ruby>られた、とても<ruby>歴史<rt>れきし</rt></ruby>のある<ruby>神社<rt>じんじゃ</rt></ruby>だと<ruby>伝<rt>つた</rt></ruby>えられています。</p>
+        </article>
+        <article>
+          <h3><ruby>毎年<rt>まいとし</rt></ruby>、<ruby>部品<rt>ぶひん</rt></ruby>から<ruby>組<rt>く</rt></ruby>み<ruby>立<rt>た</rt></ruby>てる</h3>
+          <p><ruby>河堀稲生神社<rt>かわほりいなりじんじゃ</rt></ruby>のだんじりの<ruby>大<rt>おお</rt></ruby>きな<ruby>特色<rt>とくしょく</rt></ruby>は、<ruby>毎年<rt>まいとし</rt></ruby>、バラバラの<ruby>部品<rt>ぶひん</rt></ruby>から<ruby>組<rt>く</rt></ruby>み<ruby>立<rt>た</rt></ruby>てるところから<ruby>始<rt>はじ</rt></ruby>めることです。</p>
+        </article>
+        <article>
+          <h3>みんなで<ruby>作<rt>つく</rt></ruby>る<ruby>行事<rt>ぎょうじ</rt></ruby></h3>
+          <p><ruby>大人<rt>おとな</rt></ruby>と<ruby>子<rt>こ</rt></ruby>どもが<ruby>力<rt>ちから</rt></ruby>を<ruby>合<rt>あ</rt></ruby>わせて、だんじりを<ruby>完成<rt>かんせい</rt></ruby>させます。<ruby>協力<rt>きょうりょく</rt></ruby>することで、<ruby>町<rt>まち</rt></ruby>の<ruby>人<rt>ひと</rt></ruby>たちのきずなが<ruby>強<rt>つよ</rt></ruby>くなります。</p>
+        </article>
+        <article>
+          <h3><ruby>子<rt>こ</rt></ruby>どもだんじり</h3>
+          <p><ruby>祭<rt>まつ</rt></ruby>りでは、<ruby>子<rt>こ</rt></ruby>どもたちも「わっしょい！わっしょい！」とかけ<ruby>声<rt>ごえ</rt></ruby>をかけながら、<ruby>元気<rt>げんき</rt></ruby>にだんじりを<ruby>引<rt>ひ</rt></ruby>きます。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="old-tennoji">
+      <div class="section-title">
+        <span class="number">4</span>
+        <h2><ruby>昔<rt>むかし</rt></ruby>の<ruby>天王寺区<rt>てんのうじく</rt></ruby>ってどんなところ？</h2>
+      </div>
+      <p class="body-text"><ruby>今<rt>いま</rt></ruby>の<ruby>天王寺区<rt>てんのうじく</rt></ruby>は、ビルや<ruby>家<rt>いえ</rt></ruby>がたくさん<ruby>建<rt>た</rt></ruby>っているにぎやかな<ruby>町<rt>まち</rt></ruby>です。でも、<ruby>大昔<rt>おおむかし</rt></ruby>は<ruby>今<rt>いま</rt></ruby>とはちがう<ruby>景色<rt>けしき</rt></ruby>が<ruby>広<rt>ひろ</rt></ruby>がっていました。</p>
+      <div class="cards">
+        <article class="card">
+          <span class="label"><ruby>高台<rt>たかだい</rt></ruby></span>
+          <h3><ruby>海<rt>うみ</rt></ruby>が<ruby>見<rt>み</rt></ruby>える<ruby>場所<rt>ばしょ</rt></ruby></h3>
+          <p><ruby>天王寺区<rt>てんのうじく</rt></ruby>は「<ruby>上町台地<rt>うえまちだいち</rt></ruby>」という<ruby>高<rt>たか</rt></ruby>い<ruby>場所<rt>ばしょ</rt></ruby>にあります。<ruby>江戸時代<rt>えどじだい</rt></ruby>には、<ruby>西側<rt>にしがわ</rt></ruby>が<ruby>崖<rt>がけ</rt></ruby>のようになっていて、<ruby>遠<rt>とお</rt></ruby>くの<ruby>海<rt>うみ</rt></ruby>や<ruby>淡路島<rt>あわじしま</rt></ruby>まで<ruby>見<rt>み</rt></ruby>わたせたと<ruby>言<rt>い</rt></ruby>われています。</p>
+        </article>
+        <article class="card">
+          <span class="label"><ruby>坂道<rt>さかみち</rt></ruby></span>
+          <h3><ruby>天王寺七坂<rt>てんのうじななさか</rt></ruby></h3>
+          <p><ruby>高台<rt>たかだい</rt></ruby>にあるため、<ruby>町<rt>まち</rt></ruby>には<ruby>歴史<rt>れきし</rt></ruby>のある<ruby>七<rt>なな</rt></ruby>つの<ruby>坂道<rt>さかみち</rt></ruby>があります。<ruby>真言坂<rt>しんごんざか</rt></ruby>や<ruby>逢坂<rt>おうさか</rt></ruby>などは、<ruby>今<rt>いま</rt></ruby>でも<ruby>残<rt>のこ</rt></ruby>っています。</p>
+        </article>
+        <article class="card">
+          <span class="label"><ruby>自然<rt>しぜん</rt></ruby></span>
+          <h3><ruby>池<rt>いけ</rt></ruby>やくだもの<ruby>畑<rt>ばたけ</rt></ruby></h3>
+          <p><ruby>明治時代<rt>めいじじだい</rt></ruby>の<ruby>地図<rt>ちず</rt></ruby>を<ruby>見<rt>み</rt></ruby>ると、<ruby>今<rt>いま</rt></ruby>の<ruby>天王寺区役所<rt>てんのうじくやくしょ</rt></ruby>のあたりには<ruby>大<rt>おお</rt></ruby>きな<ruby>池<rt>いけ</rt></ruby>があり、<ruby>町<rt>まち</rt></ruby>の<ruby>中<rt>なか</rt></ruby>にはくだもの<ruby>畑<rt>ばたけ</rt></ruby>も<ruby>広<rt>ひろ</rt></ruby>がっていました。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="beginning">
+      <div class="section-title">
+        <span class="number">5</span>
+        <h2>だんじりは「いつ」から<ruby>始<rt>はじ</rt></ruby>まったの？</h2>
+      </div>
+      <p class="body-text">だんじりのお<ruby>祭<rt>まつ</rt></ruby>りは、<ruby>関西地方<rt>かんさいちほう</rt></ruby>で<ruby>長<rt>なが</rt></ruby>い<ruby>歴史<rt>れきし</rt></ruby>をもっています。<ruby>始<rt>はじ</rt></ruby>まりには、いくつかの<ruby>言<rt>い</rt></ruby>い<ruby>伝<rt>つた</rt></ruby>えがあります。</p>
+      <div class="timeline">
+        <article class="timeline-item">
+          <div class="time">400<ruby>年以上前<rt>ねんいじょうまえ</rt></ruby></div>
+          <div>
+            <h3>お<ruby>城<rt>しろ</rt></ruby>づくりのかけ<ruby>声<rt>ごえ</rt></ruby></h3>
+            <p>だんじりを<ruby>引<rt>ひ</rt></ruby>くときの<ruby>音楽<rt>おんがく</rt></ruby>「お<ruby>囃子<rt>はやし</rt></ruby>」は、<ruby>豊臣秀吉<rt>とよとみひでよし</rt></ruby>が「<ruby>大坂城<rt>おおさかじょう</rt></ruby>」を<ruby>作<rt>つく</rt></ruby>ったとき、<ruby>石<rt>いし</rt></ruby>を<ruby>運<rt>はこ</rt></ruby>ぶ<ruby>人<rt>ひと</rt></ruby>たちが<ruby>元気<rt>げんき</rt></ruby>を<ruby>出<rt>だ</rt></ruby>すために<ruby>歌<rt>うた</rt></ruby>ったかけ<ruby>声<rt>ごえ</rt></ruby>がもとだと<ruby>言<rt>い</rt></ruby>われています。</p>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <div class="time"><ruby>江戸時代<rt>えどじだい</rt></ruby></div>
+          <div>
+            <h3><ruby>関西<rt>かんさい</rt></ruby>で<ruby>広<rt>ひろ</rt></ruby>まったお<ruby>祭<rt>まつ</rt></ruby>り</h3>
+            <p>だんじりを<ruby>引<rt>ひ</rt></ruby>くお<ruby>祭<rt>まつ</rt></ruby>りが<ruby>本格的<rt>ほんかくてき</rt></ruby>に<ruby>広<rt>ひろ</rt></ruby>がったのは、<ruby>江戸時代<rt>えどじだい</rt></ruby>の<ruby>中<rt>なか</rt></ruby>ごろだと<ruby>言<rt>い</rt></ruby>われています。お<ruby>米<rt>こめ</rt></ruby>がたくさんとれることや、<ruby>病気<rt>びょうき</rt></ruby>がはやらないことを<ruby>神様<rt>かみさま</rt></ruby>にお<ruby>祈<rt>いの</rt></ruby>りしました。</p>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <div class="time">1703<ruby>年<rt>ねん</rt></ruby></div>
+          <div>
+            <h3><ruby>岸和田<rt>きしわだ</rt></ruby>だんじり<ruby>祭<rt>まつり</rt></ruby></h3>
+            <p>とても<ruby>有名<rt>ゆうめい</rt></ruby>な<ruby>岸和田<rt>きしわだ</rt></ruby>のだんじり<ruby>祭<rt>まつり</rt></ruby>も、<ruby>当時<rt>とうじ</rt></ruby>のお<ruby>殿様<rt>とのさま</rt></ruby>が、お<ruby>米<rt>こめ</rt></ruby>や<ruby>麦<rt>むぎ</rt></ruby>などがたくさんとれるように<ruby>神様<rt>かみさま</rt></ruby>へお<ruby>祈<rt>いの</rt></ruby>りしたのが<ruby>始<rt>はじ</rt></ruby>まりだと<ruby>伝<rt>つた</rt></ruby>えられています。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="words">
+      <div class="section-title">
+        <span class="number">6</span>
+        <h2>ことばカード</h2>
+      </div>
+      <div class="keyword-grid">
+        <details open>
+          <summary><ruby>山車<rt>だし</rt></ruby></summary>
+          <p><ruby>祭<rt>まつ</rt></ruby>りのときに、かざりをつけて<ruby>引<rt>ひ</rt></ruby>いたりかついだりするものです。</p>
+        </details>
+        <details open>
+          <summary><ruby>彫刻<rt>ちょうこく</rt></ruby></summary>
+          <p><ruby>木<rt>き</rt></ruby>や<ruby>石<rt>いし</rt></ruby>などをけずって、<ruby>形<rt>かたち</rt></ruby>やもようを<ruby>作<rt>つく</rt></ruby>ることです。</p>
+        </details>
+        <details open>
+          <summary><ruby>五穀豊穣<rt>ごこくほうじょう</rt></ruby></summary>
+          <p><ruby>米<rt>こめ</rt></ruby>、<ruby>麦<rt>むぎ</rt></ruby>、<ruby>豆<rt>まめ</rt></ruby>などの<ruby>作物<rt>さくもつ</rt></ruby>がたくさんとれることを<ruby>願<rt>ねが</rt></ruby>う<ruby>言葉<rt>ことば</rt></ruby>です。</p>
+        </details>
+        <details open>
+          <summary><ruby>青年会<rt>せいねんかい</rt></ruby></summary>
+          <p><ruby>地域<rt>ちいき</rt></ruby>の<ruby>若<rt>わか</rt></ruby>い<ruby>人<rt>ひと</rt></ruby>たちが<ruby>集<rt>あつ</rt></ruby>まり、<ruby>祭<rt>まつ</rt></ruby>りや<ruby>町<rt>まち</rt></ruby>の<ruby>活動<rt>かつどう</rt></ruby>を<ruby>進<rt>すす</rt></ruby>めるグループです。</p>
+        </details>
+        <details open>
+          <summary><ruby>上町台地<rt>うえまちだいち</rt></ruby></summary>
+          <p><ruby>大阪<rt>おおさか</rt></ruby>の<ruby>町<rt>まち</rt></ruby>の<ruby>中<rt>なか</rt></ruby>を<ruby>南北<rt>なんぼく</rt></ruby>に<ruby>続<rt>つづ</rt></ruby>く、<ruby>高<rt>たか</rt></ruby>くなった<ruby>土地<rt>とち</rt></ruby>です。</p>
+        </details>
+        <details open>
+          <summary><ruby>天王寺七坂<rt>てんのうじななさか</rt></ruby></summary>
+          <p><ruby>天王寺<rt>てんのうじ</rt></ruby>にある、<ruby>歴史<rt>れきし</rt></ruby>のある<ruby>七<rt>なな</rt></ruby>つの<ruby>坂道<rt>さかみち</rt></ruby>のことです。</p>
+        </details>
+        <details open>
+          <summary>お<ruby>囃子<rt>はやし</rt></ruby></summary>
+          <p>お<ruby>祭<rt>まつ</rt></ruby>りで、<ruby>太鼓<rt>たいこ</rt></ruby>や<ruby>笛<rt>ふえ</rt></ruby>などを<ruby>使<rt>つか</rt></ruby>って<ruby>演奏<rt>えんそう</rt></ruby>する<ruby>音楽<rt>おんがく</rt></ruby>です。</p>
+        </details>
+        <details open>
+          <summary><ruby>大坂城<rt>おおさかじょう</rt></ruby></summary>
+          <p><ruby>豊臣秀吉<rt>とよとみひでよし</rt></ruby>が<ruby>作<rt>つく</rt></ruby>った、<ruby>大阪<rt>おおさか</rt></ruby>にある<ruby>大<rt>おお</rt></ruby>きなお<ruby>城<rt>しろ</rt></ruby>です。</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="section" id="memo">
+      <div class="section-title">
+        <span class="number">7</span>
+        <h2>まとめメモ</h2>
+      </div>
+      <p class="body-text"><ruby>天王寺区<rt>てんのうじく</rt></ruby>は、<ruby>昔<rt>むかし</rt></ruby>は<ruby>海<rt>うみ</rt></ruby>が<ruby>見<rt>み</rt></ruby>わたせる、<ruby>緑<rt>みどり</rt></ruby>の<ruby>多<rt>おお</rt></ruby>い<ruby>高<rt>たか</rt></ruby>い<ruby>場所<rt>ばしょ</rt></ruby>でした。だんじりのお<ruby>祭<rt>まつ</rt></ruby>りは、お<ruby>城<rt>しろ</rt></ruby>づくりのかけ<ruby>声<rt>ごえ</rt></ruby>や<ruby>江戸時代<rt>えどじだい</rt></ruby>からの<ruby>願<rt>ねが</rt></ruby>いとつながり、<ruby>何百年<rt>なんびゃくねん</rt></ruby>も<ruby>大切<rt>たいせつ</rt></ruby>に<ruby>引<rt>ひ</rt></ruby>きつがれてきました。<ruby>今<rt>いま</rt></ruby>、みんなでだんじりを<ruby>引<rt>ひ</rt></ruby>く<ruby>町<rt>まち</rt></ruby>や<ruby>音楽<rt>おんがく</rt></ruby>には、そんな<ruby>歴史<rt>れきし</rt></ruby>がつまっています。</p>
+      <ul class="check-list">
+        <li>だんじりは、<ruby>何<rt>なん</rt></ruby>のために<ruby>祭<rt>まつ</rt></ruby>りで<ruby>使<rt>つか</rt></ruby>われるのかな。</li>
+        <li><ruby>天王寺<rt>てんのうじ</rt></ruby>のだんじりは、ほかの<ruby>地域<rt>ちいき</rt></ruby>とどんなところがちがうのかな。</li>
+        <li><ruby>昔<rt>むかし</rt></ruby>の<ruby>天王寺区<rt>てんのうじく</rt></ruby>は、<ruby>今<rt>いま</rt></ruby>とどんなところがちがうのかな。</li>
+        <li>だんじりの<ruby>音楽<rt>おんがく</rt></ruby>やかけ<ruby>声<rt>ごえ</rt></ruby>には、どんな<ruby>始<rt>はじ</rt></ruby>まりがあるのかな。</li>
+        <li><ruby>町<rt>まち</rt></ruby>の<ruby>人<rt>ひと</rt></ruby>たちが<ruby>協力<rt>きょうりょく</rt></ruby>すると、どんなよいことがあるのかな。</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <small>だんじりと<ruby>天王寺<rt>てんのうじ</rt></ruby>のだんじりの<ruby>歴史<rt>れきし</rt></ruby>｜<ruby>小学<rt>しょうがく</rt></ruby>3<ruby>年生<rt>ねんせい</rt></ruby> <ruby>調<rt>しら</rt></ruby>べ<ruby>学習<rt>がくしゅう</rt></ruby></small>
+  </footer>
+</body>
+</html>
