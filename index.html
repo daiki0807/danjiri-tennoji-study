@@ -358,6 +358,49 @@
       font-weight: 900;
     }
 
+    .qa-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .qa-card {
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: .5rem;
+      background: #fff;
+      box-shadow: 0 8px 22px rgba(39, 50, 58, .06);
+    }
+
+    .qa-card h3 {
+      display: flex;
+      gap: .5rem;
+      align-items: flex-start;
+      color: var(--wood);
+    }
+
+    .qa-card h3::before {
+      content: "Q";
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      width: 1.65rem;
+      height: 1.65rem;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--leaf);
+      font-size: .85rem;
+      line-height: 1;
+    }
+
+    .answer-label {
+      display: inline-block;
+      margin: .65rem 0 .15rem;
+      color: var(--red);
+      font-weight: 900;
+    }
+
     .feature {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -383,6 +426,7 @@
     @media (max-width: 860px) {
       .hero,
       .content-grid,
+      .qa-grid,
       .feature {
         grid-template-columns: 1fr;
       }
@@ -437,6 +481,7 @@
       .side-box,
       details,
       .timeline-item,
+      .qa-card,
       .feature article {
         box-shadow: none;
       }
@@ -471,6 +516,7 @@
       <li><a href="#tennoji"><ruby>天王寺<rt>てんのうじ</rt></ruby></a></li>
       <li><a href="#old-tennoji"><ruby>昔<rt>むかし</rt></ruby>の<ruby>町<rt>まち</rt></ruby></a></li>
       <li><a href="#beginning"><ruby>始<rt>はじ</rt></ruby>まり</a></li>
+      <li><a href="#questions">ぎもん</a></li>
       <li><a href="#words">ことば</a></li>
       <li><a href="#memo">まとめ</a></li>
     </ul>
@@ -621,9 +667,49 @@
       </div>
     </section>
 
-    <section class="section" id="words">
+    <section class="section" id="questions">
       <div class="section-title">
         <span class="number">6</span>
+        <h2>みんなのぎもん</h2>
+      </div>
+      <p class="body-text"><ruby>黒板<rt>こくばん</rt></ruby>に<ruby>出<rt>で</rt></ruby>た「<ruby>調<rt>しら</rt></ruby>べてみたいこと」に<ruby>答<rt>こた</rt></ruby>えるコーナーです。だんじりは<ruby>地域<rt>ちいき</rt></ruby>によって<ruby>形<rt>かたち</rt></ruby>や<ruby>大<rt>おお</rt></ruby>きさがちがうので、「たとえば」として<ruby>読<rt>よ</rt></ruby>みましょう。</p>
+      <div class="qa-grid">
+        <article class="qa-card">
+          <h3>だんじりの<ruby>形<rt>かたち</rt></ruby>や<ruby>大<rt>おお</rt></ruby>きさは？</h3>
+          <span class="answer-label">こたえ</span>
+          <p>だんじりには、<ruby>屋根<rt>やね</rt></ruby>、<ruby>車輪<rt>しゃりん</rt></ruby>、<ruby>綱<rt>つな</rt></ruby>、<ruby>太鼓<rt>たいこ</rt></ruby>、<ruby>鉦<rt>かね</rt></ruby>、<ruby>彫刻<rt>ちょうこく</rt></ruby>などがあります。<ruby>岸和田<rt>きしわだ</rt></ruby>のだんじりでは、<ruby>高<rt>たか</rt></ruby>さ<ruby>約<rt>やく</rt></ruby>3.8メートル、<ruby>長<rt>なが</rt></ruby>さ<ruby>約<rt>やく</rt></ruby>4メートル、<ruby>重<rt>おも</rt></ruby>さ<ruby>約<rt>やく</rt></ruby>4トンほどのものもあります。</p>
+        </article>
+        <article class="qa-card">
+          <h3>だんじりには、どんな<ruby>願<rt>ねが</rt></ruby>いがあるの？</h3>
+          <span class="answer-label">こたえ</span>
+          <p>お<ruby>米<rt>こめ</rt></ruby>や<ruby>作物<rt>さくもつ</rt></ruby>がたくさんとれること、<ruby>町<rt>まち</rt></ruby>が<ruby>安全<rt>あんぜん</rt></ruby>であること、<ruby>病気<rt>びょうき</rt></ruby>がはやらないことなどを<ruby>神様<rt>かみさま</rt></ruby>にお<ruby>祈<rt>いの</rt></ruby>りする<ruby>願<rt>ねが</rt></ruby>いがあります。<ruby>町<rt>まち</rt></ruby>の<ruby>人<rt>ひと</rt></ruby>が<ruby>力<rt>ちから</rt></ruby>を<ruby>合<rt>あ</rt></ruby>わせる<ruby>願<rt>ねが</rt></ruby>いもこめられています。</p>
+        </article>
+        <article class="qa-card">
+          <h3>お<ruby>祭<rt>まつ</rt></ruby>りはどうしてあるの？</h3>
+          <span class="answer-label">こたえ</span>
+          <p>お<ruby>祭<rt>まつ</rt></ruby>りは、<ruby>神様<rt>かみさま</rt></ruby>に「ありがとう」を<ruby>伝<rt>つた</rt></ruby>えたり、これからも<ruby>元気<rt>げんき</rt></ruby>にくらせるようにお<ruby>願<rt>ねが</rt></ruby>いしたりするために<ruby>行<rt>おこな</rt></ruby>われてきました。<ruby>地域<rt>ちいき</rt></ruby>の<ruby>人<rt>ひと</rt></ruby>が<ruby>集<rt>あつ</rt></ruby>まり、<ruby>昔<rt>むかし</rt></ruby>からの<ruby>文化<rt>ぶんか</rt></ruby>を<ruby>次<rt>つぎ</rt></ruby>の<ruby>世代<rt>せだい</rt></ruby>へ<ruby>受<rt>う</rt></ruby>けつぐ<ruby>役目<rt>やくめ</rt></ruby>もあります。</p>
+        </article>
+        <article class="qa-card">
+          <h3>どんなかざりがついているの？</h3>
+          <span class="answer-label">こたえ</span>
+          <p>だんじりには、<ruby>木<rt>き</rt></ruby>にほられた<ruby>細<rt>こま</rt></ruby>かい<ruby>彫刻<rt>ちょうこく</rt></ruby>があります。<ruby>神話<rt>しんわ</rt></ruby>、<ruby>昔<rt>むかし</rt></ruby>の<ruby>戦<rt>たたか</rt></ruby>い、<ruby>動物<rt>どうぶつ</rt></ruby>、<ruby>花<rt>はな</rt></ruby>、<ruby>波<rt>なみ</rt></ruby>などがほられることがあります。かざりは、<ruby>町<rt>まち</rt></ruby>の<ruby>自慢<rt>じまん</rt></ruby>にもなっています。</p>
+        </article>
+        <article class="qa-card">
+          <h3>だんじりは、<ruby>使<rt>つか</rt></ruby>っていないときどこにあるの？</h3>
+          <span class="answer-label">こたえ</span>
+          <p><ruby>多<rt>おお</rt></ruby>くの<ruby>地域<rt>ちいき</rt></ruby>では、だんじりを<ruby>大切<rt>たいせつ</rt></ruby>にしまう<ruby>場所<rt>ばしょ</rt></ruby>があります。<ruby>天王寺<rt>てんのうじ</rt></ruby>の<ruby>河堀稲生神社<rt>こぼれいなりじんじゃ</rt></ruby>のお<ruby>祭<rt>まつ</rt></ruby>りでは、<ruby>手作<rt>てづく</rt></ruby>りのだんじりを<ruby>出<rt>だ</rt></ruby>すので、お<ruby>祭<rt>まつ</rt></ruby>りの<ruby>前<rt>まえ</rt></ruby>に<ruby>準備<rt>じゅんび</rt></ruby>することが<ruby>大切<rt>たいせつ</rt></ruby>です。</p>
+        </article>
+        <article class="qa-card">
+          <h3>だんじりは<ruby>外国<rt>がいこく</rt></ruby>にもあるの？</h3>
+          <span class="answer-label">こたえ</span>
+          <p>「だんじり」という<ruby>名前<rt>なまえ</rt></ruby>や<ruby>神社<rt>じんじゃ</rt></ruby>のお<ruby>祭<rt>まつ</rt></ruby>りとつながる<ruby>形<rt>かたち</rt></ruby>は、<ruby>日本<rt>にほん</rt></ruby>の<ruby>文化<rt>ぶんか</rt></ruby>です。でも、<ruby>外国<rt>がいこく</rt></ruby>にもパレードで<ruby>使<rt>つか</rt></ruby>う「フロート」という、かざった<ruby>車<rt>くるま</rt></ruby>のようなものがあります。<ruby>同<rt>おな</rt></ruby>じところとちがうところをくらべると、よい<ruby>調<rt>しら</rt></ruby>べ<ruby>学習<rt>がくしゅう</rt></ruby>になります。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="words">
+      <div class="section-title">
+        <span class="number">7</span>
         <h2>ことばカード</h2>
       </div>
       <div class="keyword-grid">
@@ -659,15 +745,23 @@
           <summary><ruby>大坂城<rt>おおさかじょう</rt></ruby></summary>
           <p><ruby>豊臣秀吉<rt>とよとみひでよし</rt></ruby>が<ruby>作<rt>つく</rt></ruby>った、<ruby>大阪<rt>おおさか</rt></ruby>にある<ruby>大<rt>おお</rt></ruby>きなお<ruby>城<rt>しろ</rt></ruby>です。</p>
         </details>
+        <details open>
+          <summary>フロート</summary>
+          <p>パレードで<ruby>使<rt>つか</rt></ruby>う、かざりをつけた<ruby>車<rt>くるま</rt></ruby>や<ruby>台<rt>だい</rt></ruby>のことです。</p>
+        </details>
+        <details open>
+          <summary><ruby>無病息災<rt>むびょうそくさい</rt></ruby></summary>
+          <p><ruby>病気<rt>びょうき</rt></ruby>をせず、<ruby>元気<rt>げんき</rt></ruby>にくらせることを<ruby>願<rt>ねが</rt></ruby>う<ruby>言葉<rt>ことば</rt></ruby>です。</p>
+        </details>
       </div>
     </section>
 
     <section class="section" id="memo">
       <div class="section-title">
-        <span class="number">7</span>
+        <span class="number">8</span>
         <h2>まとめメモ</h2>
       </div>
-      <p class="body-text"><ruby>天王寺区<rt>てんのうじく</rt></ruby>は、<ruby>昔<rt>むかし</rt></ruby>は<ruby>海<rt>うみ</rt></ruby>が<ruby>見<rt>み</rt></ruby>わたせる、<ruby>緑<rt>みどり</rt></ruby>の<ruby>多<rt>おお</rt></ruby>い<ruby>高<rt>たか</rt></ruby>い<ruby>場所<rt>ばしょ</rt></ruby>でした。だんじりのお<ruby>祭<rt>まつ</rt></ruby>りは、お<ruby>城<rt>しろ</rt></ruby>づくりのかけ<ruby>声<rt>ごえ</rt></ruby>や<ruby>江戸時代<rt>えどじだい</rt></ruby>からの<ruby>願<rt>ねが</rt></ruby>いとつながり、<ruby>何百年<rt>なんびゃくねん</rt></ruby>も<ruby>大切<rt>たいせつ</rt></ruby>に<ruby>引<rt>ひ</rt></ruby>きつがれてきました。<ruby>今<rt>いま</rt></ruby>、みんなでだんじりを<ruby>引<rt>ひ</rt></ruby>く<ruby>町<rt>まち</rt></ruby>や<ruby>音楽<rt>おんがく</rt></ruby>には、そんな<ruby>歴史<rt>れきし</rt></ruby>がつまっています。</p>
+      <p class="body-text"><ruby>天王寺区<rt>てんのうじく</rt></ruby>は、<ruby>昔<rt>むかし</rt></ruby>は<ruby>海<rt>うみ</rt></ruby>が<ruby>見<rt>み</rt></ruby>わたせる、<ruby>緑<rt>みどり</rt></ruby>の<ruby>多<rt>おお</rt></ruby>い<ruby>高<rt>たか</rt></ruby>い<ruby>場所<rt>ばしょ</rt></ruby>でした。だんじりのお<ruby>祭<rt>まつ</rt></ruby>りは、お<ruby>城<rt>しろ</rt></ruby>づくりのかけ<ruby>声<rt>ごえ</rt></ruby>や<ruby>江戸時代<rt>えどじだい</rt></ruby>からの<ruby>願<rt>ねが</rt></ruby>いとつながり、<ruby>何百年<rt>なんびゃくねん</rt></ruby>も<ruby>大切<rt>たいせつ</rt></ruby>に<ruby>引<rt>ひ</rt></ruby>きつがれてきました。だんじりの<ruby>形<rt>かたち</rt></ruby>、かざり、<ruby>音楽<rt>おんがく</rt></ruby>、<ruby>願<rt>ねが</rt></ruby>いを<ruby>調<rt>しら</rt></ruby>べると、<ruby>町<rt>まち</rt></ruby>の<ruby>人<rt>ひと</rt></ruby>たちが<ruby>大切<rt>たいせつ</rt></ruby>にしてきた<ruby>歴史<rt>れきし</rt></ruby>が<ruby>見<rt>み</rt></ruby>えてきます。</p>
       <ul class="check-list">
         <li>だんじりは、<ruby>何<rt>なん</rt></ruby>のために<ruby>祭<rt>まつ</rt></ruby>りで<ruby>使<rt>つか</rt></ruby>われるのかな。</li>
         <li><ruby>天王寺<rt>てんのうじ</rt></ruby>のだんじりは、ほかの<ruby>地域<rt>ちいき</rt></ruby>とどんなところがちがうのかな。</li>
