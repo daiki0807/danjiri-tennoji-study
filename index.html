@@ -200,6 +200,49 @@
       outline: none;
     }
 
+    .furigana-control {
+      flex: 0 0 auto;
+      margin-right: .25rem;
+      padding-right: .5rem;
+      border-right: 1px solid var(--line);
+    }
+
+    .furigana-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      min-height: 2.2rem;
+      padding: .35rem .8rem;
+      border: 2px solid var(--wood);
+      border-radius: .5rem;
+      background: #fff;
+      color: var(--wood);
+      font: inherit;
+      font-weight: 800;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .furigana-toggle:hover,
+    .furigana-toggle:focus-visible {
+      background: #fff4e8;
+      outline: none;
+    }
+
+    .furigana-toggle[aria-pressed="true"] {
+      background: var(--wood);
+      color: #fff;
+    }
+
+    .furigana-toggle .state {
+      font-size: .82rem;
+      font-weight: 700;
+    }
+
+    body.hide-furigana rt {
+      display: none;
+    }
+
     main {
       width: min(1120px, calc(100% - 2rem));
       margin: 0 auto;
@@ -511,6 +554,11 @@
 
   <nav aria-label="学習メニュー">
     <ul>
+      <li class="furigana-control">
+        <button type="button" id="furigana-toggle" class="furigana-toggle" aria-pressed="true">
+          ふりがな<span class="state" id="furigana-state">オン</span>
+        </button>
+      </li>
       <li><a href="#start">だんじりとは</a></li>
       <li><a href="#history"><ruby>歴史<rt>れきし</rt></ruby></a></li>
       <li><a href="#tennoji"><ruby>天王寺<rt>てんのうじ</rt></ruby></a></li>
@@ -815,5 +863,37 @@
   <footer>
     <small>だんじりと<ruby>天王寺<rt>てんのうじ</rt></ruby>のだんじりの<ruby>歴史<rt>れきし</rt></ruby>｜<ruby>小学<rt>しょうがく</rt></ruby>3<ruby>年生<rt>ねんせい</rt></ruby> <ruby>調<rt>しら</rt></ruby>べ<ruby>学習<rt>がくしゅう</rt></ruby></small>
   </footer>
+
+  <script>
+    (function () {
+      var STORAGE_KEY = "danjiri-furigana";
+      var body = document.body;
+      var toggle = document.getElementById("furigana-toggle");
+      var stateLabel = document.getElementById("furigana-state");
+
+      function apply(show) {
+        body.classList.toggle("hide-furigana", !show);
+        toggle.setAttribute("aria-pressed", show ? "true" : "false");
+        stateLabel.textContent = show ? "オン" : "オフ";
+      }
+
+      // ほぞんされた せっていを よみこむ（はじめては オン）
+      var saved;
+      try {
+        saved = localStorage.getItem(STORAGE_KEY);
+      } catch (e) {
+        saved = null;
+      }
+      apply(saved !== "off");
+
+      toggle.addEventListener("click", function () {
+        var show = body.classList.contains("hide-furigana");
+        apply(show);
+        try {
+          localStorage.setItem(STORAGE_KEY, show ? "on" : "off");
+        } catch (e) {}
+      });
+    })();
+  </script>
 </body>
 </html>
